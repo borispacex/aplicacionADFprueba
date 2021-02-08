@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:train value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}" id="t1"/>
+  <af:trainButtonBar value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}" id="tbb1"/>
+  <af:separator id="s1"/>
+  <af:outputText value="Dashboard" id="ot1"/>
+  <af:separator id="s2"/>
+  <af:panelGridLayout id="pgl1">
+    <af:gridRow marginTop="5px" height="auto" id="gr1">
+      <af:gridCell marginStart="5px" width="50%" id="gc1">
+        <af:panelBox text="Grafico de Torta" id="pb1">
+          <f:facet name="toolbar"/>
+        </af:panelBox>
+      </af:gridCell>
+      <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2">
+        <af:panelBox text="Grafico de Barras" id="pb2">
+          <f:facet name="toolbar"/>
+        </af:panelBox>
+      </af:gridCell>
+    </af:gridRow>
+    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
+      <af:gridCell marginStart="5px" width="50%" id="gc3">
+        <af:panelBox text="Tabla" id="pb3">
+          <f:facet name="toolbar"/>
+        </af:panelBox>
+      </af:gridCell>
+      <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc4">
+        <af:panelBox text="Algo" id="pb4">
+          <f:facet name="toolbar"/>
+        </af:panelBox>
+      </af:gridCell>
+    </af:gridRow>
+  </af:panelGridLayout>
+</ui:composition>

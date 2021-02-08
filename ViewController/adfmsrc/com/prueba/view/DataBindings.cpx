@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.22.48" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.prueba.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/indx.jsf" usageId="com_prueba_view_indxPageDef"/>
+    <page path="/menu.jsf" usageId="com_prueba_view_menuPageDef"/>
+    <page path="/menu.jsff" usageId="com_prueba_view_menuPageDef1"/>
+    <page path="/Empleados.jsff" usageId="com_prueba_view_EmpleadosPageDef"/>
+    <page path="/Departamentos.jsff" usageId="com_prueba_view_DepartamentosPageDef"/>
+    <page path="/index.jsf" usageId="com_prueba_view_indexPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_prueba_view_indxPageDef" path="com.prueba.view.pageDefs.indxPageDef"/>
+    <page id="com_prueba_view_menuPageDef" path="com.prueba.view.pageDefs.menuPageDef"/>
+    <page id="com_prueba_view_menuPageDef1" path="com.prueba.view.pageDefs.menuPageDef1"/>
+    <page id="com_prueba_view_EmpleadosPageDef" path="com.prueba.view.pageDefs.EmpleadosPageDef"/>
+    <page id="com_prueba_view_DepartamentosPageDef" path="com.prueba.view.pageDefs.DepartamentosPageDef"/>
+    <page id="com_prueba_view_indexPageDef" path="com.prueba.view.pageDefs.indexPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="com.prueba.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

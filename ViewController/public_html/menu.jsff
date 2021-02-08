@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top">
+      <af:panelHeader text="Menu" id="ph1">
+        <f:facet name="context"/>
+        <f:facet name="toolbar"/>
+        <f:facet name="menuBar"/>
+        <f:facet name="legend"/>
+        <f:facet name="info"/>
+      </af:panelHeader>
+    </f:facet>
+    <f:facet name="bottom"/>
+    <f:facet name="center">
+      <af:decorativeBox id="db1">
+        <f:facet name="top">
+          <af:menuBar id="mb1" inlineStyle="text-align:center; font-size:large;">
+            <af:menu text="Dashboard" id="m1">
+              <af:commandMenuItem text="Dashboard" id="cmi1" action="page1"/>
+            </af:menu>
+            <af:menu text="Departamentos" id="m2">
+              <af:commandMenuItem text="Departamentos" id="cmi2" action="page2"/>
+            </af:menu>
+            <af:menu text="Empleados" id="m3">
+              <af:commandMenuItem text="Empleados" id="cmi3" action="page3"/>
+            </af:menu>
+          </af:menuBar>
+        </f:facet>
+        <f:facet name="center">
+          <af:region value="#{bindings.menutaskflow1.regionModel}" id="r1"/>
+        </f:facet>
+      </af:decorativeBox>
+    </f:facet>
+  </af:panelStretchLayout>
+</ui:composition>

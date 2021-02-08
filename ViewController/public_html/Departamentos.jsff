@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:train value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}" id="t1"/>
+  <af:trainButtonBar value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}" id="tbb1"/>
+  <af:separator id="s1"/>
+  <af:outputText value="Departamentos" id="ot1"/>
+  <af:separator id="s2"/>
+  <af:panelTabbed position="above" id="pt1" inlineStyle="width:1284px;">
+    <af:showDetailItem id="tab1" text="Departamentos" disclosed="true">
+      <af:separator id="s3"/>
+      <af:panelGroupLayout layout="vertical" id="pgl1">
+        <af:panelHeader text="Departments" id="ph1">
+          <af:query id="qryId1" headerText="Search" disclosed="true"
+                    value="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}"
+                    model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                    queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                    queryOperationListener="#{bindings.ImplicitViewCriteriaQuery.processQueryOperation}"
+                    resultComponentId="::resId1"/>
+        </af:panelHeader>
+        <af:table value="#{bindings.DepartmentsView1.collectionModel}" var="row"
+                  rows="#{bindings.DepartmentsView1.rangeSize}"
+                  emptyText="#{bindings.DepartmentsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  rowBandingInterval="0" selectedRowKeys="#{bindings.DepartmentsView1.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.DepartmentsView1.collectionModel.makeCurrent}" rowSelection="single"
+                  fetchSize="#{bindings.DepartmentsView1.rangeSize}" id="resId1" partialTriggers="::b1 ::b2 ::b3 ::b4">
+          <af:column headerText="#{bindings.DepartmentsView1.hints.DepartmentId.label}" id="resId1c1">
+            <af:outputText value="#{row.DepartmentId}"
+                           shortDesc="#{bindings.DepartmentsView1.hints.DepartmentId.tooltip}" id="ot2">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsView1.hints.DepartmentId.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column headerText="#{bindings.DepartmentsView1.hints.DepartmentName.label}" id="resId1c2">
+            <af:outputText value="#{row.DepartmentName}"
+                           shortDesc="#{bindings.DepartmentsView1.hints.DepartmentName.tooltip}" id="ot3"/>
+          </af:column>
+          <af:column headerText="#{bindings.DepartmentsView1.hints.ManagerId.label}" id="resId1c3">
+            <af:outputText value="#{row.ManagerId}" shortDesc="#{bindings.DepartmentsView1.hints.ManagerId.tooltip}"
+                           id="ot4">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsView1.hints.ManagerId.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column headerText="#{bindings.DepartmentsView1.hints.LocationId.label}" id="resId1c4">
+            <af:outputText value="#{row.LocationId}" shortDesc="#{bindings.DepartmentsView1.hints.LocationId.tooltip}"
+                           id="ot5">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentsView1.hints.LocationId.format}"/>
+            </af:outputText>
+          </af:column>
+        </af:table>
+      </af:panelGroupLayout>
+    </af:showDetailItem>
+    <af:showDetailItem id="tab2" text="Editar">
+      <af:separator id="s4"/>
+      <af:panelFormLayout id="pfl1">
+        <af:inputText value="#{bindings.DepartmentId.inputValue}" label="#{bindings.DepartmentId.hints.label}"
+                      required="#{bindings.DepartmentId.hints.mandatory}"
+                      columns="#{bindings.DepartmentId.hints.displayWidth}"
+                      maximumLength="#{bindings.DepartmentId.hints.precision}"
+                      shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="it1">
+          <f:validator binding="#{bindings.DepartmentId.validator}"/>
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentId.format}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.DepartmentName.inputValue}" label="#{bindings.DepartmentName.hints.label}"
+                      required="#{bindings.DepartmentName.hints.mandatory}"
+                      columns="#{bindings.DepartmentName.hints.displayWidth}"
+                      maximumLength="#{bindings.DepartmentName.hints.precision}"
+                      shortDesc="#{bindings.DepartmentName.hints.tooltip}" id="it2">
+          <f:validator binding="#{bindings.DepartmentName.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.ManagerId.inputValue}" label="#{bindings.ManagerId.hints.label}"
+                      required="#{bindings.ManagerId.hints.mandatory}"
+                      columns="#{bindings.ManagerId.hints.displayWidth}"
+                      maximumLength="#{bindings.ManagerId.hints.precision}"
+                      shortDesc="#{bindings.ManagerId.hints.tooltip}" id="it3">
+          <f:validator binding="#{bindings.ManagerId.validator}"/>
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.ManagerId.format}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.LocationId.inputValue}" label="#{bindings.LocationId.hints.label}"
+                      required="#{bindings.LocationId.hints.mandatory}"
+                      columns="#{bindings.LocationId.hints.displayWidth}"
+                      maximumLength="#{bindings.LocationId.hints.precision}"
+                      shortDesc="#{bindings.LocationId.hints.tooltip}" id="it4">
+          <f:validator binding="#{bindings.LocationId.validator}"/>
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.LocationId.format}"/>
+        </af:inputText>
+        <f:facet name="footer">
+          <af:panelGroupLayout layout="vertical" id="pgl2">
+            <af:panelGroupLayout layout="horizontal" id="pgl3">
+              <af:button actionListener="#{bindings.First.execute}" text="First" disabled="#{!bindings.First.enabled}"
+                         partialSubmit="true" id="b1"/>
+              <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                         disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b2"/>
+              <af:button actionListener="#{bindings.Next.execute}" text="Next" disabled="#{!bindings.Next.enabled}"
+                         partialSubmit="true" id="b3"/>
+              <af:button actionListener="#{bindings.Last.execute}" text="Last" disabled="#{!bindings.Last.enabled}"
+                         partialSubmit="true" id="b4"/>
+            </af:panelGroupLayout>
+            <af:button text="Submit" id="b5"/>
+            <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
+                       id="b6"/>
+            <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback" immediate="true" id="b7">
+              <af:resetActionListener/>
+            </af:button>
+          </af:panelGroupLayout>
+        </f:facet>
+      </af:panelFormLayout>
+    </af:showDetailItem>
+  </af:panelTabbed>
+</ui:composition>

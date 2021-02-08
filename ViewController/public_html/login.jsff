@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:h="http://java.sun.com/jsf/html">
+  <af:inputText label="Usuario: " id="it2" value="#{pageFlowScope.username}" binding="#{backing_login.username}"
+                inlineStyle="text-align:center;"/>
+  <af:inputText label="Contraseña: " id="it1" binding="#{backing_login.password}" inlineStyle="text-align:center;"/>
+  <af:separator id="s1"/>
+  <af:button text="Ingresar" id="b1" inlineStyle="text-align:center;"/>
+</ui:composition>

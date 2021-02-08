@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<pageTemplateDefs xmlns="http://xmlns.oracle.com/adf/faces/rich/pagetemplate">
+  <pagetemplate-jsp-ui-def>/ADF-template.jsf</pagetemplate-jsp-ui-def>
+  <pagetemplate-jsp-ui-def>/ADF-Template.jsf</pagetemplate-jsp-ui-def>
+  <pagetemplate-jsp-ui-def>/ADFtemplate.jsf</pagetemplate-jsp-ui-def>
+</pageTemplateDefs>

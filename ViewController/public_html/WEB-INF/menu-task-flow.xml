@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="menu-task-flow">
+    <default-activity>Dashboard</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="Dashboard">
+      <page>/Dashboard.jsff</page>
+      <train-stop/>
+    </view>
+    <view id="Departamentos">
+      <page>/Departamentos.jsff</page>
+      <train-stop/>
+    </view>
+    <view id="Empleados">
+      <page>/Empleados.jsff</page>
+      <train-stop/>
+    </view>
+    <train/>
+    <control-flow-rule id="__1">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>page1</from-outcome>
+        <to-activity-id>Dashboard</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>page2</from-outcome>
+        <to-activity-id>Departamentos</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__4">
+        <from-outcome>page3</from-outcome>
+        <to-activity-id>Empleados</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>
